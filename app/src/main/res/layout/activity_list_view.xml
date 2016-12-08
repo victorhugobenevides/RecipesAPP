@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:statusBarBackground="?attr/colorBackgroundFloating">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:statusBarScrim="?attr/colorBackgroundFloating">
+
+                <ImageView
+                    android:id="@+id/imageview_placeholder"
+                    android:layout_width="match_parent"
+
+                    android:contentDescription="@string/app_name"
+
+                    android:scaleType="center"
+                    android:tint="#11000000"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.9"
+                    android:layout_height="250dp" />
+
+                <FrameLayout
+                    android:id="@+id/framelayout_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="#FFF"
+                    android:orientation="vertical"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.4">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#FFF"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:text="meryl@gmail.com"
+
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="4dp"
+                            android:textStyle="normal|bold" />
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity=""
+                            app:cardBackgroundColor="@color/colorPrimary"
+                            android:background="@color/colorPrimary" android:elevation="4dp">
+                            <TextView
+                                android:id="@+id/text3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="0 recipes favorites"
+
+                                android:textColor="@android:color/white"
+                                android:layout_margin="4dp"
+                                android:textStyle="normal|bold" />
+                        </android.support.v7.widget.CardView>
+
+
+                    </LinearLayout>
+                </FrameLayout>
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/RecView"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    />
+
+
+
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFF"
+            android:scaleType="centerInside"
+            app:layout_anchor="@id/framelayout_title"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:layout_gravity="left" android:gravity="left"
+            app:layout_collapseMode="pin"
+            app:title="" app:layout_scrollFlags="scroll|enterAlways">
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_width"
+            app:layout_scrollFlags="enterAlwaysCollapsed"
+            android:layout_gravity="center"
+            app:layout_behavior="itbenevides.com.br.recipesapp.ImageBehavior" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_width"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_gravity="center"
+            android:text="Meryl Streep"
+            android:gravity="center"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0."
+            app:layout_behavior="itbenevides.com.br.recipesapp.TextBehavior"
+            android:id="@+id/textView"
+            android:textStyle="normal|bold" />
+
+
+
+
+    </android.support.design.widget.CoordinatorLayout>  </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>
